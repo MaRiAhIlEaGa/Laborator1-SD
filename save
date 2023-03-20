@@ -1,0 +1,92 @@
+    def get_modelCar(self):
+        return self.modelCar
+
+    def get_brandCar(self):
+        return self.brandCar
+
+    def get_buyingpriceCar(self):
+        return self.buyingpriceCar
+
+    def get_sellingpriceCar(self):
+        return self.sellingpriceCar
+
+    def set_tokenCar(self, token_car):
+        self.tokenCar = token_car
+
+    def set_modelCar(self, modelCar):
+        self.modelCar = modelCar
+
+    def set_brandCar(self, brandCar):
+        self.brandCar = brandCar
+
+    def set_buyingpriceCar(self, buyingpriceCar):
+        self.buyingpriceCar = buyingpriceCar
+
+    def set_sellingpriceCar(self, sellingpriceCar):
+        self.sellingpriceCar = sellingpriceCar
+
+
+
+class Sort(object):
+    def __init__(self, cars_list, sort_condition):
+        self.cars_list = cars_list
+        self.sort_condition = sort_condition
+
+    def sort_big_complexity(entity_list, comparator):
+        for entity1 in range(len(entity_list) - 1):
+            for entity in range(entity1 + 1, len(entity_list)):
+                if entity1.ge > entity2:
+                    aux = entity1
+                    entity1 = entity2
+                    entity2 = aux
+
+
+# class Search:
+#     def __init__(self, cars_list, search_condition, attribute):
+#         self.cars_list = cars_list
+#         self.search_condition = search_condition
+#         self.attribute = attribute
+#
+#     def binary_search(self, st, dr):
+#         while st <= dr:
+#             mij = int((st + dr) / 2)
+#             if self.cars_list[st].get_condition(self.search_condition) == self.attribute:
+#                 return True
+#             elif self
+#
+#
+
+
+
+swap(car1.get_condition("model"), car2.get_condition("model"))
+                    swap(car1.get_condition("brand"), car2.get_condition("brand"))
+                    swap(car1.get_condition("token"), car2.get_condition("token"))
+                    swap(car1.get_condition("buyingprice"), car2.get_condition("buyingprice"))
+                    swap(car1.get_condition("sellingprice"), car2.get_condition("sellingprice"))
+
+                   @staticmethod
+    def get_model(car):
+        return car.get_condition("model")
+
+    @staticmethod
+    def get_brand(car):
+        return car.get_condition("brand")
+
+    @staticmethod
+    def get_token(car):
+        return car.get_condition("token")
+
+    @staticmethod
+    def get_buyingprice(car):
+        return car.get_condition("buyingprice")
+
+    @staticmethod
+    def get_sellingprice(car):
+        return car.get_condition("sellingprice")
+
+
+ # car1.get_condition("model"), car2.get_condition("model") = car2.get_condition("model"), car1.get_condition("model")
+                    # car1.get_condition("brand"), car2.get_condition("brand") = car2.get_condition("brand"), car1.get_condition("brand")
+                    # car1.get_condition("token"), car2.get_condition("token") = car2.get_condition("token"), car1.get_condition("token")
+                    # car1.get_condition("buyingprice"), car2.get_condition("buyingprice") = car2.get_condition("buyingprice"), car1.get_condition("buyingprice")
+                    # car1.get_condition("sellingprice"), car2.get_condition("sellingprice") = car2.get_condition("sellingprice"), car1.get_condition("sellingprice")

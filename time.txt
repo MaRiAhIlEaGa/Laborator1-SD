@@ -1,0 +1,6 @@
+Function binary_search took 0.0000112001 seconds
+Function binary_search took 0.0000076001 seconds
+Function bubble_sort took 0.0014342000 seconds
+Function bubble_sort took 0.0012846002 seconds
+Function bubble_sort took 0.0008566999 seconds
+Function bubble_sort took 0.0010927003 seconds
