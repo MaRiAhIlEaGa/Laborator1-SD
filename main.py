@@ -1,5 +1,5 @@
 from Entity import Car
-from operations import Search, SORT_Alg
+from operations import Search_Maria, Search_Diana, Sort_Maria, Sort_Diana
 
 cars = []
 f = open("Cars.txt", "r")
@@ -37,9 +37,10 @@ def menu():
 #                                               SEARCH
 
 def search():
-    SORT_Alg(cars, 1).bubble_sort()
+    Sort_Maria(cars, 1).bubble_sort()
     token = input("Please enter token of the brand you search for: \n")
-    print(Search(cars, token).binary_search())
+    print(Search_Maria(cars, token).binary_search())
+    print(Search_Diana(cars, token).secventail_search())
 
 
 #                                                   SORT
@@ -58,7 +59,8 @@ def sort():
         if condition == 5:
             is_true = False
         else:
-            SORT_Alg(cars, condition).bubble_sort()
+            Sort_Maria(cars, condition).bubble_sort()
+            Sort_Diana(cars, condition).merge_sort(cars)
             for carrr in cars:
                 print(carrr)
         print("\n")

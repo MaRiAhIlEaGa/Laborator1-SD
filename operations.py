@@ -14,7 +14,7 @@ def timeit(func):
     return wrapper
 
 
-class Search:
+class Search_Maria:
     def __init__(self, cars_list, token):
         self.cars_list = cars_list
         self.token = token
@@ -34,7 +34,7 @@ class Search:
         return None
 
 
-class SORT_Alg:
+class Sort_Maria:
     def __init__(self, cars_list, condition):
         self.cars_list = cars_list
         if condition == 1:
@@ -111,3 +111,99 @@ class SORT_Alg:
                     car1.set_sellingpriceCar(car2_sellingprice)
                     car2.set_sellingpriceCar(car1_sellingprice)
         return self.cars_list
+
+@timeit
+class Sort_Diana:
+    def __init__(self, cars_list, sort_condition):
+        self._ = cars_list
+        if sort_condition == 1:
+            self.comparator = self.sort_by_token
+        elif sort_condition == 2:
+            self.comparator = self.sort_by_brand_and_model
+        elif sort_condition == 3:
+            self.comparator = self.sort_by_brand_and_model_and_token
+        elif sort_condition == 4:
+            self.comparator = self.sort_by_profit
+
+    @staticmethod
+    def sort_by_token(car1, car2):
+        if car1.get_condition("token") < car2.get_condition("token"):
+            return True
+        elif car1.get_condition("token") == car2.get_condition("token"):
+            return None
+        return False
+
+    @staticmethod
+    def sort_by_brand_and_model(car1, car2):
+        if car1.get_condition("brand") < car2.get_condition("brand"):
+            return True
+        elif car1.get_condition("brand") == car2.get_condition("brand"):
+            if car1.get_condition("model") < car2.get_condition("model"):
+                return True
+        return False
+
+    @staticmethod
+    def sort_by_brand_and_model_and_token(car1, car2):
+        if car1.get_condition("brand") < car2.get_condition("brand"):
+            return True
+        elif car1.get_condition("brand") == car2.get_condition("brand"):
+            if car1.get_condition("model") < car2.get_condition("model"):
+                return True
+            elif car1.get_condition("model") == car2.get_condition("model"):
+                if car1.get_condition("token") < car2.get_condition("token"):
+                    return True
+        return False
+
+    @staticmethod
+    def sort_by_profit(car1, car2):
+        profit_car1 = car1.get_condition("sellingprice") - car1.get_condition("buyingprice")
+        profit_car2 = car2.get_condition("sellingprice") - car2.get_condition("buyingprice")
+        if profit_car1 < profit_car2:
+            return True
+        elif profit_car1 == profit_car2:
+            return None
+        return False
+
+    def merge_sort(self, cars):
+        if len(cars) > 1:
+            mid = len(cars) // 2
+            sub_cars1 = cars[:mid]
+            sub_cars2 = cars[mid:]
+
+            self.merge_sort(sub_cars1)
+            self.merge_sort(sub_cars2)
+
+            i = j = k = 0
+
+            while i < len(sub_cars1) and j < len(sub_cars2):
+                if self.comparator(sub_cars1[i], sub_cars2[j]):
+                    cars[k] = sub_cars1[i]
+                    i += 1
+                elif not self.comparator(sub_cars1[i], sub_cars2[j]):
+                    cars[k] = sub_cars1[i]
+                    j +=1
+                k += 1
+
+            while i < len(sub_cars1):
+                cars[k] = sub_cars1[i]
+                i += 1
+                k += 1
+
+            while j < len(sub_cars2):
+                cars[k] = sub_cars2[j]
+                j += 1
+                k += 1
+
+        return cars
+
+class Search_Diana:
+    def __init__(self, entity_list, search_condition):
+        self.entity_list = entity_list
+        self.search_condition = search_condition
+
+    @timeit
+    def secventail_search(self):
+        for entity in self.entity_list:
+            if entity.get_condition("token") == self.search_condition:
+                return entity
+        return None
