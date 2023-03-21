@@ -4,3 +4,14 @@ Function bubble_sort took 0.0014342000 seconds
 Function bubble_sort took 0.0012846002 seconds
 Function bubble_sort took 0.0008566999 seconds
 Function bubble_sort took 0.0010927003 seconds
+
+
+Function binary_search took 0.0000176000 seconds
+Function secventail_search took 0.0000367000 seconds
+Function bubble_sort took 0.0205280000 seconds
+Function Sort_Diana took 0.0000060000 seconds
+Function bubble_sort took 0.0247452000 seconds
+Function Sort_Diana took 0.0000067000 seconds
+Function bubble_sort took 0.0218401000 seconds
+Function Sort_Diana took 0.0000068000 seconds
+

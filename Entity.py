@@ -41,5 +41,5 @@ class Car:
             str(self.get_condition("sellingprice"))
 
 
-car = Car("Chevrolet", "Malibu", "fuvjx4hgj4", 4236, 4199)
-print(car.get_condition("buyingprice"))
+# car = Car("Chevrolet", "Malibu", "fuvjx4hgj4", 4236, 4199)
+# print(car.get_condition("buyingprice"))
